@@ -306,10 +306,6 @@ void RenderState::render(const Glop& glop) {
     // Shader uniforms
     SkiaShader::apply(*mCaches, fill.skiaShaderData);
 
-    Texture* texture = (fill.skiaShaderData.skiaShaderType & kBitmap_SkiaShaderType) ?
-            fill.skiaShaderData.bitmapData.bitmapTexture : nullptr;
-    const AutoTexture autoCleanup(texture);
-
     // ------------------------------------
     // ---------- GL state setup ----------
     // ------------------------------------
